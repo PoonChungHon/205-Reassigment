@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="beetle.js"></script>
+
+    <script src="slide.js"></script>
+
+    <link rel="stylesheet" href="Bug.css">
+
+    <link rel="stylesheet" href="minty.bootstrap.css">
+
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+    <title>Beetles & Pet Accessories</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  
+  <body>
+    <header>
+      <h1>Beetles &amp; Pet Accessories</h1>
+      <div class="mySlides">
+        <div class="mySlides fade">
+          <img src="slide1.jpg" style="width:100%">
+        </div>
+      
+        <div class="mySlides fade">
+          <img src="slide2.jpg" style="width:100%">
+        </div>
+      
+        <div class="mySlides fade">
+          <img src="slide3.jpg" style="width:100%">
+        </div>
+      </header>
+        <!-- Add more slides here -->
+      
+      </div>
+      <div id="buttons-header-wrapper">
+        <img src="1.png" class="payment-method">
+        <img src="2.png" class="payment-method">
+        <img src="3.png" class="payment-method">
+        <img src="4.png" class="payment-method">
+        <img src="5.png" class="payment-method">
+        
+        <a href="account.php" title="My Account">
+          <img src="images/my-account.png" alt="My Account">
+        </a>
+              <a href="/?openCart=ok" title="My Cart">
+          <img src="images/my-cart.png" alt="My Cart">
+        </a>
+  <!--       <a href="" title="Checkout">
+          <img src="images/checkout.png" alt="Checkout">
+        </a>     -->    
+      </div>
+      <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <ul>
+          <li><a href="Bugweb.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="accessories.html">Accessories</a></li>
+          <li.><a href="search.html">Search</a></li>
+        </ul>
+        <div class="ri-bug-2-line" id="ri-bug-2-line"></div>
+        
+      </nav>
+    </header>
+    <p><h3>hello and welcome to the world of beetles!</h3></p>
+    <p><h5>Did you know tht there are over 400,000 known beetles in this world?</h5></p>
+    <p><h5> they also comes with many different shapes and colors!, making them<br>
+            one of the most diverse insect groups in the world! here are some examples below </h5></p>
+
+    <main>
+      <section id="featured">
+        <h2 class="logo">Featured Beetles</h2>
+        <article>
+          <img src="beetle1.jpg" alt="Beetle 1">
+          <h3>Golden Stag Beetle</h3>
+          <p>a beetle with a glistening carapace with a golden sheen </p>
+          <a href="https://www.youtube.com/watch?v=QgQhiWMfKQo">learn more!</a>
+        </article>
+        <article>
+          <img src="beetle2.jpg" alt="Beetle 2">
+          <h3>Rainbow Beetle</h3>
+          <p></p>
+          <a href="#">learn more!</a>
+        </article>
+        <article>
+          <img src="beetle3.jpg" alt="Beetle 3">
+          <h3>Titan StagBeetle</h3>
+          <p>a large stagbeetle with formidable jaws, if youre not careful a pinch would send you flying!</p>
+          <a href="https://www.youtube.com/watch?v=Xe15dftFz-s">learn more!</a>
+        </article>
+      </section>
+    </section>
+    <!-- Add a comment section -->
+    <section style="nav-right: auto;">
+      <h2>Comments</h2>
+      <form style="margin: auto;">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="comment">Comment:</label>
+        <textarea id="comment" name="comment"></textarea><br><br>
+        <input type="submit" value="Submit">
+      </form>
+      <div id="comments-list"></div>
+    </section>
+    <!-- End of comment section -->
+    <section>
+    </main>
+    <footer>
+      <p>&copy; 2023 Beetles &amp; Pet Accessories</p>
+      {% extends "base.html" %} {% block title %} login {% endblock %}
+{% block content %}
+<form method="POST">
+    <h3 align="center">Login</h3>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input 
+        type="email" 
+        class="form-control" 
+        id="email" 
+        name="email" 
+        placeholder="Enter email"
+        >
+    </div>
+    
+    <div class="form-group">
+        <label for="password1">Password</label>
+        <input 
+        type="password" 
+        class="form-control" 
+        id="password" 
+        name="password" 
+        placeholder="Enter Password"
+        >
+    </div>
+    
+    <br>
+    <button type="Login" class="btn btn-primary">Submit</button>
+
+</form>
+{% extends "base.html" %} {% block title %} signup {% endblock %}
+{% block content %}
+<form method="POST">
+    <h3 align="center">Sign Up</h3>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input 
+        type="email" 
+        class="form-control" 
+        id="email" 
+        name="email" 
+        placeholder="Please enter your email Address"
+        >
+    </div>
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input 
+        type="firstname" 
+        class="form-control" 
+        id="firstName" 
+        name="firstName" 
+        placeholder="Please enter your first name"
+        >
+    </div>
+    <div class="form-group">
+        <label for="password1">Password</label>
+        <input 
+        type="password" 
+        class="form-control" 
+        id="password1" 
+        name="password1" 
+        placeholder="Please enter password"
+        >
+    </div>
+    <div class="form-group">
+        <label for="password2">Confirmation</label>
+        <input 
+        type="password" 
+        class="form-control" 
+        id="password2" 
+        name="password2" 
+        placeholder="Please re-enter password"
+        >
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+    
+
+{% endblock %}
+    </footer>
+  </body>
+</html>

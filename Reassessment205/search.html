@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="Bug.css">
+    <link rel="stylesheet" href="minty.bootstrap.css">
+
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+
+   
+    <title class="title">Beetles & Pet Accessories</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Website</title>
+  </head>
+  <body>
+    <header>
+    <h1>Upcoming Events</h1>
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <ul>
+        <div>
+          <li><a href="Bugweb.html" class="page-link">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="accessories.html">Accessories</a></li>
+          <li><a href="about.html">About Us</a></li>
+        <li.><a href="search.html">Search</a></li>
+        </div>
+    </header>
+    <form id="search-form">
+      <label class="form-control me-sm-2" for="search">Search:</label>
+      <input type="text" id="search" name="search">
+      <button type="submit">Submit</button>
+    </form>
+    <form id="category-form">
+      <label for="category">Filter by category:</label>
+      <select id="category" name="category">
+        <option value="">All categories</option>
+        <option value="Zoom Meeting">Zoom</option>
+        <option value="exihibiton">Exihibiton</option>
+        <option value="school">Educational Talk</option>
+      </select>
+    </form>
+    <ul id="event-list">
+      <li data-category="zoom Meeting">
+        <h2>Zoom Meeting UK</h2>
+        <p>Date: June 1, 2023</p>
+        <p><h5>Online Educational talk to connect with you globaly</h5></p>
+      </li>
+      <li data-category="zoom Meeting">
+        <h2>Zoom Meeting </h2>
+        <p>Date: June 7, 2023</p>
+        <p><h5>Online Educational talk to connect with you globaly</h5></p>
+      </li>
+      <li data-category="exihibiton">
+        <h2>Exihibiton</h2>
+        <p>Date: July 1, 2023</p>
+        <p>Description: new beetle convention in Hong Kong, come and see beetles youve never known.</p>
+      </li>
+      <li data-category="exihibiton">
+        <h2>Exihibiton MK</h2>
+        <p>Date: July 17, 2023</p>
+        <p>Description: new beetle convention in Hong Kong, come and see beetles youve never known.</p>
+      </li>
+      <li data-category="school">
+        <h2>School meeting</h2>
+        <p>Date: August 1, 2023</p>
+        <p><h5>Educational talks at the Kowloon Exihibiton Center</h5></p>
+      </li>
+    </ul>
+    <script>
+      const searchForm = document.querySelector('#search-form');
+      const categoryForm = document.querySelector('#category-form');
+      const eventList = document.querySelector('#event-list');
+      
+      searchForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const searchQuery = document.querySelector('#search').value.toLowerCase();
+        const events = eventList.querySelectorAll('li');
+        for (let i = 0; i < events.length; i++) {
+          const eventTitle = events[i].querySelector('h2').textContent.toLowerCase();
+          if (eventTitle.includes(searchQuery)) {
+            events[i].style.display = 'block';
+          } else {
+            events[i].style.display = 'none';
+          }
+        }
+      });
+      
+      categoryForm.addEventListener('change', function(event) {
+        const selectedCategory = event.target.value;
+        const events = eventList.querySelectorAll('li');
+        for (let i = 0; i < events.length; i++) {
+          const eventCategory = events[i].getAttribute('data-category');
+          if (selectedCategory === '' || eventCategory === selectedCategory) {
+            events[i].style.display = 'block';
+          } else {
+            events[i].style.display = 'none';
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
